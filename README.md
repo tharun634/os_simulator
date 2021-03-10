@@ -14,7 +14,7 @@ Clone the repo<br>
 ## Running the server
 
 In the  directory of the repo issue the following command<br><br>
-`python app.py runserver`
+`python manage.py runserver`
 
 ## Simulations/Algorithms included
 1. Process Scheduling
