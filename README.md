@@ -1,16 +1,21 @@
-# os_simulator
+# OS-Simulator
+A work-in-progress OS Simulator
 
-A new Flutter project.
+## Tech stack used
 
-## Getting Started
+Python3<br>
+Django<br>
+Flask
 
-This project is a starting point for a Flutter application.
+## Installation 
+Clone the repo<br>
+`URL`
 
-A few resources to get you started if this is your first Flutter project:
+## Running the server
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+In the  directory of the repo issue the following command<br><br>
+`python app.py runserver`
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Simulations/Algorithms included
+1. Process Scheduling
+2. Semaphores
