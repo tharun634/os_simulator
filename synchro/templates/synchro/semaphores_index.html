@@ -25,6 +25,21 @@
         <a href="/synchro/semaphores/demo/2/"><li id="lichoice">Reader Writer Problem</li></a>
         <a href="/synchro/semaphores/demo/3/"><li id="lichoice">Dining Philosophers Problem</li></a>
         <a href="/synchro/semaphores/demo/4/"><li id="lichoice">Sleeping Barber Problem</li></a>
+        <a href="/wiki/semaphore/"><li id="wikichoice">Wiki</li></a>
     </ul>
 </div>
-
+<!-- <div class="main-container">
+{% for alg in algos %}
+  {% if alg.demourl|stringformat:"s" == "sem"  %}
+    <div class="alg-container">
+      <div class="alg-name">  {{alg.name}} </div>
+      <div class="alg-description">
+        {{alg.description}}
+      </div>
+    <a href="/synchro/semaphores/demo/{{forloop.counter}}/" class="btn btn-primary">Demo</a>
+    </div>
+    <br>
+  {% endif %}
+{% endfor %}
+</div>
+{% endblock %} -->
