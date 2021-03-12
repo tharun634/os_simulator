@@ -13,12 +13,24 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url,include
+from django.conf.urls import include
 from django.contrib import admin
+from django.urls import path
+from django.views.static import serve
+import os
+
 from . import views
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+FLUTTER_PROCESS = os.path.join(BASE_DIR, 'flutter_process')
+
+def flutter_redirect(request, resource):
+    return serve(request, resource, FLUTTER_PROCESS)
+
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^$', views.index),
-    url(r'^synchro/', include('synchro.urls')),
-    url(r'^process/', include('process.urls')),
+    path('admin/', admin.site.urls),
+    path('', views.index),
+    path('synchro/', include('synchro.urls')),
+    path('process/', lambda r: flutter_redirect(r, 'index.html')),
+    path('process/<path:resource>', flutter_redirect),
 ]
