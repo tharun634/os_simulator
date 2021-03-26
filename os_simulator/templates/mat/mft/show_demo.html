@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Memory Management</title>
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mft/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.css' %}">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script src="{% static 'js/mft/demo.js' %}"></script>
+    <script src="{% static 'js/typeit.js' %}"></script>
+
+    <script>
+    var totalMemory = {{ total_memory }};
+    var noOfBlocks = {{ no_of_blocks }};
+    var blockSize = {{ block_size|safe }};
+    console.log(blockSize[1]);
+</script>
+</head>
+<body>
+<div class="container-fluid">
+    <div id="page-heading">
+        <h1>Memory Allocation Techniques</h1>
+    </div>
+    <div id="selection-form">
+        <button type="button" id="first-fit-select" class="btn btn-default">First-Fit</button>
+        <button type="button" id="best-fit-select" class="btn btn-default">Best-Fit</button>
+        <button type="button" id="worst-fit-select" class="btn btn-default">Worst-Fit</button>
+    </div>
+    <div id="demo-box">
+        <div class="col-sm-6" id="left-box">
+            <div class="col-sm-6">
+                <h4>Main Memory</h4>
+                <div id="memory-box">
+
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <h4>Input Queue</h4>
+                <div id="input-q-box">
+
+                </div>
+                <button class="btn btn-info" id="add-process-button">Add Process</button>
+            </div>
+        </div>
+        <div class="col-sm-6" id="right-box">
+            <div class="row" id="top-box">
+                <h3>Output Table</h3>
+                <table class="table table-striped" id="output-table">
+                    <thead>
+                    <tr>
+                        <th>Process No.</th>
+                        <th>Process Size</th>
+                        <th>Allocation Status</th>
+                        <th>Block No.</th>
+                        <th>Internal Fragmentation</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <div class="row" id="bottom-box">
+                <div id="terminal-header" style="text-align: center;">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-6">Terminal - log.txt</div>
+                    <div class="col-sm-3"></div>
+                </div>
+                <div id="terminal-body">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
