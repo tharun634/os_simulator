@@ -25,7 +25,7 @@ SECRET_KEY = 'zofux-gkw2$z7lzi=u%azzx6vm3505%rq4&jl_gur8=rwfz(*e'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','localhost']
+ALLOWED_HOSTS = ['127.0.0.1','localhost','os-simulator.herokuapp.com']
 
 
 # Application definition
