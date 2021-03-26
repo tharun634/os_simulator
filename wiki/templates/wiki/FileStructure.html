@@ -15,7 +15,7 @@
     <meta name="author" content="">
     <meta name="keywords" content="">
 
-    <title>Bankers Algorithm</title>
+    <title>File Structure</title>
 
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{%static 'wiki/fonts/font-awesome-4.3.0/css/font-awesome.min.css' %}">
@@ -47,7 +47,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="big-title text-center">
-                            <h1>Bankers Algorithm</h1>
+                            <h1>File Structure</h1>
                         </div>
                         <!-- end title -->
                     </div>
@@ -87,10 +87,10 @@
 
                                         <hr>
                                         <div>
-                                            <p> Page replacement algorithms are the techniques using which an Operating System decides which memory pages to swap out, write to disk when a page of memory needs to be allocated. Paging happens whenever a page fault occurs and a free page cannot be used for allocation purpose accounting to reason that pages are not available or the number of free pages is lower than required pages.
+                                            <p> File System provide efficient access to the disk by allowing data to be stored, located and retrieved in a convenient way. A file System must be able to store the file, locate the file and retrieve the file.
                                             </p>
 
-                                            <p> When the page that was selected for replacement and was paged out, is referenced again, it has to read in from disk, and this requires for I/O completion. This process determines the quality of the page replacement algorithm: the lesser the time waiting for page-ins, the better is the algorithm.
+                                            <p>Most of the Operating Systems use layering approach for every task including file systems. Every layer of the file system is responsible for some activities.
                                             </p>
 
                                             <p> A page replacement algorithm looks at the limited information about accessing the pages provided by hardware, and tries to select which pages should be replaced to minimize the total number of page misses, while balancing it with the costs of primary storage and processor time of the algorithm itself. There are many different page replacement algorithms. We evaluate an algorithm by running it on a particular string of memory reference and computing the number of page faults.
