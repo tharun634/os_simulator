@@ -14,18 +14,18 @@
     </div>
     <br>
     {% for alg in algos %}
-      {% if alg.demourl|stringformat:"s" == "mem"  %}
-        <div class="alg-container">
-          <div class="alg-name">  {{alg.name}} </div>
-          <div class="alg-description">
-            {{alg.description}}
-          </div>
-        </div>
-        <br>
-        <!-- THIS IS COMMON DEMO BUTTON FOR ALL ABOVE ALGOS -->
-        {% endif %}
-      {% endfor %}
-        <a href="/page/demo/" class="btn btn-primary">Demo</a><br>
+    {% if alg.demourl|stringformat:"s" == "mem" %}
+    <div class="alg-container">
+      <div class="alg-name"> {{alg.name}} </div>
+      <div class="alg-description">
+        {{alg.description}}
+      </div>
+    </div>
+    <br>
+    <!-- THIS IS COMMON DEMO BUTTON FOR ALL ABOVE ALGOS -->
+    {% endif %}
+    {% endfor %}
+    <a href="/page/demo/" class="btn btn-primary">Demo</a><br>
 
   </div>
 

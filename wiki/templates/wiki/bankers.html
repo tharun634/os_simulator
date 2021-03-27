@@ -24,8 +24,10 @@
     <link rel="stylesheet" type="text/css" href="{%static 'wiki/css/animate.css' %}">
     <link rel="stylesheet" type="text/css" href="{%static 'wiki/css/prettyPhoto.css' %}">
     <link rel="stylesheet" type="text/css" href="{%static 'wiki/css/style.css' %}">
-    <link rel="stylesheet" type="text/css" href="{%static 'wiki/js/syntax-highlighter/styles/shCore.css' %}" media="all">
-    <link rel="stylesheet" type="text/css" href="{%static 'wiki/js/syntax-highlighter/styles/shThemeRDark.css' %}" media="all">
+    <link rel="stylesheet" type="text/css" href="{%static 'wiki/js/syntax-highlighter/styles/shCore.css' %}"
+        media="all">
+    <link rel="stylesheet" type="text/css" href="{%static 'wiki/js/syntax-highlighter/styles/shThemeRDark.css' %}"
+        media="all">
     <link rel="stylesheet" type="text/css" href="{%static 'wiki/css/custom.css' %}">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -63,7 +65,8 @@
             <div class="row">
 
                 <div class="col-md-3">
-                    <nav class="docs-sidebar" data-spy="affix" data-offset-top="300" data-offset-bottom="200" role="navigation">
+                    <nav class="docs-sidebar" data-spy="affix" data-offset-top="300" data-offset-bottom="200"
+                        role="navigation">
                         <ul class="nav">
                             <li><a href="#line1">Introduction</a></li>
                             <li><a href="#line2">Banker's Algorithm</a></li>
@@ -72,28 +75,45 @@
                             <li><a href="#line5">The Safety Algorithm</a></li>
                             <li><a href="#line6">Resource Request Algorithm</a></li>
                         </ul>
-                    </nav >
+                    </nav>
                 </div>
                 <div class="col-md-9">
-                    <section id = "line1" class="welcome">
+                    <section id="line1" class="welcome">
 
                         <div class="row">
                             <div class="col-md-12 left-align">
-                                <h2 class="dark-text">Introduction<hr></h2>
+                                <h2 class="dark-text">Introduction
+                                    <hr>
+                                </h2>
                                 <div class="row">
 
                                     <div class="col-md-12 full">
-                                        
+
 
                                         <hr>
                                         <div>
-                                            <p> Page replacement algorithms are the techniques using which an Operating System decides which memory pages to swap out, write to disk when a page of memory needs to be allocated. Paging happens whenever a page fault occurs and a free page cannot be used for allocation purpose accounting to reason that pages are not available or the number of free pages is lower than required pages.
+                                            <p> Page replacement algorithms are the techniques using which an Operating
+                                                System decides which memory pages to swap out, write to disk when a page
+                                                of memory needs to be allocated. Paging happens whenever a page fault
+                                                occurs and a free page cannot be used for allocation purpose accounting
+                                                to reason that pages are not available or the number of free pages is
+                                                lower than required pages.
                                             </p>
 
-                                            <p> When the page that was selected for replacement and was paged out, is referenced again, it has to read in from disk, and this requires for I/O completion. This process determines the quality of the page replacement algorithm: the lesser the time waiting for page-ins, the better is the algorithm.
+                                            <p> When the page that was selected for replacement and was paged out, is
+                                                referenced again, it has to read in from disk, and this requires for I/O
+                                                completion. This process determines the quality of the page replacement
+                                                algorithm: the lesser the time waiting for page-ins, the better is the
+                                                algorithm.
                                             </p>
 
-                                            <p> A page replacement algorithm looks at the limited information about accessing the pages provided by hardware, and tries to select which pages should be replaced to minimize the total number of page misses, while balancing it with the costs of primary storage and processor time of the algorithm itself. There are many different page replacement algorithms. We evaluate an algorithm by running it on a particular string of memory reference and computing the number of page faults.
+                                            <p> A page replacement algorithm looks at the limited information about
+                                                accessing the pages provided by hardware, and tries to select which
+                                                pages should be replaced to minimize the total number of page misses,
+                                                while balancing it with the costs of primary storage and processor time
+                                                of the algorithm itself. There are many different page replacement
+                                                algorithms. We evaluate an algorithm by running it on a particular
+                                                string of memory reference and computing the number of page faults.
                                             </p>
 
                                             <h4>Types</h4>
@@ -109,21 +129,26 @@
                                 <!-- end row -->
                             </div>
                         </div>
-                    <hr>
+                        <hr>
                     </section>
 
                     <section id="line2" class="section">
 
                         <div class="row">
                             <div class="col-md-12 left-align">
-                                <h2 class="dark-text">Banker's Algorithm<a href="#top">go to top</a><hr></h2>
+                                <h2 class="dark-text">Banker's Algorithm<a href="#top">go to top</a>
+                                    <hr>
+                                </h2>
                             </div>
                             <!-- end col -->
                         </div>
                         <!-- end row -->
 
                         <div class="row">
-                                <p>It is a deadlock avoidance algorithm which dynamically examines the resource allocation state to ensure that a deadlock does not occur. To achieve this, a system should have a knowledge of the complete sequence of requests and releases for each process to avoid a future possible deadlock</p>
+                            <p>It is a deadlock avoidance algorithm which dynamically examines the resource allocation
+                                state to ensure that a deadlock does not occur. To achieve this, a system should have a
+                                knowledge of the complete sequence of requests and releases for each process to avoid a
+                                future possible deadlock</p>
                             <!-- end col -->
                         </div>
                         <!-- end row -->
@@ -134,15 +159,22 @@
                         <hr>
                         <div class="row">
                             <div class="col-md-12 left-align">
-                                <h2 class="dark-text">Safe State and Safe Sequence<a href="#top">go to top</a><hr></h2>
+                                <h2 class="dark-text">Safe State and Safe Sequence<a href="#top">go to top</a>
+                                    <hr>
+                                </h2>
                             </div>
                             <!-- end col -->
                         </div>
                         <!-- end row -->
 
                         <div class="row">
-                                <p>A state is safe if the system can allocate resources to each process (up to its maximum) in some order and still avoid a deadlock. More formally, a system is in a safe state only if there exists a safe sequence. A sequence of processes <P1, P2, ..., Pn> is a safe sequence for the current allocation state if, for each Pi, the resource requests that Pi can still make can be satisfied by the currently available resources plus the resources held by all Pj, with j <i.</p>
-                            <!-- end col -->
+                            <p>A state is safe if the system can allocate resources to each process (up to its maximum)
+                                in some order and still avoid a deadlock. More formally, a system is in a safe state
+                                only if there exists a safe sequence. A sequence of processes <P1, P2, ..., Pn> is a
+                                    safe sequence for the current allocation state if, for each Pi, the resource
+                                    requests that Pi can still make can be satisfied by the currently available
+                                    resources plus the resources held by all Pj, with j <i.< /p>
+                                        <!-- end col -->
                         </div>
                         <!-- end row -->
                         <hr>
@@ -154,14 +186,17 @@
                         <div class="row">
                             <hr>
                             <div class="col-md-12 left-align">
-                                <h2 class="dark-text">Data Structures used in Banker’s Algorithm<a href="#top">go to top</a><hr></h2>
+                                <h2 class="dark-text">Data Structures used in Banker’s Algorithm<a href="#top">go to
+                                        top</a>
+                                    <hr>
+                                </h2>
                             </div>
                             <!-- end col -->
                         </div>
                         <!-- end row -->
 
                         <div class="row">
-                                <pre>Let n be the number of processes in the system and m be the number of resource types
+                            <pre>Let n be the number of processes in the system and m be the number of resource types
 
 Available:  A vector of length m indicates the number of available resources of each type
 Max:  An n × m matrix defines the maximum demand of each process
@@ -182,7 +217,9 @@ We can treat each row in the matrices Allocation and Need as vectors and refer t
                         <hr>
                         <div class="row">
                             <div class="col-md-12 left-align">
-                                <h2 class="dark-text">The Safety Algorithm<a href="#top">go to top</a><hr></h2>
+                                <h2 class="dark-text">The Safety Algorithm<a href="#top">go to top</a>
+                                    <hr>
+                                </h2>
                             </div>
                             <!-- end col -->
                         </div>
@@ -190,8 +227,8 @@ We can treat each row in the matrices Allocation and Need as vectors and refer t
 
                         <div class="row">
 
-                                  <p>This algorithm can be described as follows:</p>
-                                <pre>
+                            <p>This algorithm can be described as follows:</p>
+                            <pre>
 1. Let Work and Finish be vectors of length m and n, respectively. Initialize Work = Available and Finish[i] = false for i = 0, 1, ..., n − 1.
 
 2. Find an index i such that both
@@ -216,14 +253,16 @@ Go to step 2.
                             <hr>
                             <div class="row">
                                 <div class="col-md-12 left-align">
-                                    <h2 class="dark-text">Resource Request Algorithm<a href="#top">go to top</a><hr></h2>
+                                    <h2 class="dark-text">Resource Request Algorithm<a href="#top">go to top</a>
+                                        <hr>
+                                    </h2>
                                 </div>
                                 <!-- end col -->
                             </div>
                             <!-- end row -->
 
                             <div class="row">
-                                    <pre>
+                                <pre>
 Let Request[i] be the request vector for process P[i]. If Request[i][j] == k, then process P[i] wants k instances of resource type R[j]. When a request for resources is made by process P[i], the following actions are taken:
 
 1. If Request[i] ≤Need[i], go to step 2. Otherwise, raise an error condition, since the process has exceeded its maximum claim.
@@ -255,13 +294,13 @@ If the resulting resource-allocation state is safe, the transaction is completed
                                 <h4>Output</h4>
                             </div> -->
 
+                            <hr>
+                        </section>
+
+
                         <hr>
-                    </section>
 
-
-                      <hr>
-
-                    <!-- end section -->
+                        <!-- end section -->
                 </div>
                 <!-- // end .col -->
 

@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404, render
-from django.http import HttpResponseRedirect,HttpResponse
+from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
 import json
@@ -8,26 +8,31 @@ from django.http import JsonResponse
 # Create your views here.
 from . models import MemSchedAlg
 from . utils import fifo as ff
-from . utils import lru,opt
+from . utils import lru, opt
+
 
 def page(request):
     algos = MemSchedAlg.objects.all()
     context = {'algos': algos}
-    return render(request, 'page/index.html',context = context)
+    return render(request, 'page/index.html', context=context)
+
 
 def alloc(request):
     algos = MemSchedAlg.objects.all()
     context = {'algos': algos}
-    return render(request, 'page/alloc_index.html',context = context)
+    return render(request, 'page/alloc_index.html', context=context)
 
-def detail(request,pk):
+
+def detail(request, pk):
     alg = get_object_or_404(MemSchedAlg, pk=pk)
-    context = {'alg':alg,
+    context = {'alg': alg,
                }
-    return render(request,'page/detail.html',context=context)
+    return render(request, 'page/detail.html', context=context)
+
 
 def demo(request):
-    return render(request,'page/page.html')
+    return render(request, 'page/page.html')
+
 
 @csrf_exempt
 def fifo(request):
@@ -38,11 +43,11 @@ def fifo(request):
         data = request.POST.get('size')
         size = json.loads(data)
 
-        data = {'requests': requests, 'size':size}
+        data = {'requests': requests, 'size': size}
 
         result_ff = ff(data)
         result_lru = lru(data)
         result_opt = opt(data)
 
-        result = {'fifo': result_ff, 'lru':result_lru, 'opt':result_opt}
+        result = {'fifo': result_ff, 'lru': result_lru, 'opt': result_opt}
     return JsonResponse(result)

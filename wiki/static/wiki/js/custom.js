@@ -1,4 +1,4 @@
-(function($) {
+(function ($) {
     "use strict";
 
     /* ==============================================
@@ -17,7 +17,7 @@
     LIGHTBOX -->
     =============================================== */
 
-    jQuery('a[data-gal]').each(function() {
+    jQuery('a[data-gal]').each(function () {
         jQuery(this).attr('rel', jQuery(this).data('gal'));
     });
     jQuery("a[data-rel^='prettyPhoto']").prettyPhoto({
@@ -33,8 +33,8 @@
     SCROLL -->
     =============================================== */
 
-    $(function() {
-        $('a[href*=#]:not([href=#])').click(function() {
+    $(function () {
+        $('a[href*=#]:not([href=#])').click(function () {
             if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
                 var target = $(this.hash);
                 target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
@@ -57,14 +57,14 @@
     });
 
     $('[data-spy="scroll"]').each(function () {
-      var $spy = $(this).scrollspy('refresh')
+        var $spy = $(this).scrollspy('refresh')
     })
 
     /* ==============================================
     VIDEO FIX -->
     =============================================== */
 
-    $(document).ready(function() {
+    $(document).ready(function () {
         // Target your .container, .wrapper, .post, etc.
         $(".media").fitVids();
     });
@@ -73,7 +73,7 @@
     VIDEO FIX -->
     =============================================== */
 
-    $('.docs-sidebar>nav>li>a').click(function() {
+    $('.docs-sidebar>nav>li>a').click(function () {
         $('.docs-sidebar>nav>li').removeClass('active');
         $(this).parent().addClass('active');
     });

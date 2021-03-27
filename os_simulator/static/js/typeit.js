@@ -6,20 +6,20 @@
  * @description Types out a given string or strings.
  */
 
- /* jslint browser: true */
- /* globals jQuery:false */
+/* jslint browser: true */
+/* globals jQuery:false */
 
-(function($, undefined) {
+(function ($, undefined) {
 
   'use strict';
 
   var $doc = $(document);
 
-  $.fn.typeIt = function(opt) {
-    return this.each(function() {
+  $.fn.typeIt = function (opt) {
+    return this.each(function () {
       var $t = $(this);
       var tData = $t.data('typeit');
-      if(tData !== undefined) {
+      if (tData !== undefined) {
         clearTimeout(tData.tTO);
         clearTimeout(tData.dTO);
         $t.removeData('typeit');
@@ -28,7 +28,7 @@
     });
   };
 
-  $.typeIt = function(el, opt) {
+  $.typeIt = function (el, opt) {
     this.d = {
       strings: [],
       speed: 100,
@@ -45,7 +45,7 @@
       loopDelay: 750,
       html: true,
       autoStart: true,
-      callback: function() {}
+      callback: function () { }
     };
 
     this.queue = [];
@@ -61,14 +61,14 @@
 
   $.typeIt.prototype = {
 
-    _init: function() {
+    _init: function () {
       this.el.find('.ti-container, .ti-cursor, .ti-placeholder').remove();
       this._elCheck();
       this.s.strings = this._toArray(this.s.strings);
       this.el.html('<i class="ti-placeholder" style="display:inline-block;width:0;line-height:0;overflow:hidden;">.</i><span ' + this.style + ' class="ti-container"></span>');
       this.tel = this.el.find('span');
 
-      this.insert = function(c) {
+      this.insert = function (c) {
         this.tel.append(c);
       };
 
@@ -81,7 +81,7 @@
       this._kickoff();
     },
 
-    _kickoff: function() {
+    _kickoff: function () {
       this._cursor();
 
       if (this.s.autoStart) {
@@ -91,7 +91,7 @@
           this.hasStarted = true;
           this._startQueue();
         } else {
-          $doc.on('scroll', function() {
+          $doc.on('scroll', function () {
             if (this._isVisible() && !this.hasStarted) {
               this.hasStarted = true;
               this._startQueue();
@@ -101,7 +101,7 @@
       }
     },
 
-    _generateQueue: function() {
+    _generateQueue: function () {
       for (var i = 0; i < this.s.strings.length; i++) {
 
         this.queue.push([this.type, this.s.strings[i]]);
@@ -116,8 +116,8 @@
       }
     },
 
-    _startQueue: function() {
-      this._to(function() {
+    _startQueue: function () {
+      this._to(function () {
         this._executeQueue();
       }.bind(this), this.s.startDelay);
     },
@@ -125,7 +125,7 @@
     /*
       Pass in a string, and loop over that string until empty. Then return true.
     */
-    type: function(string, rake) {
+    type: function (string, rake) {
 
       // set default 'rake' value
       rake = typeof rake === 'undefined' ? true : rake;
@@ -140,7 +140,7 @@
       }
 
       // do the work that matters
-      this.tTO = setTimeout(function() {
+      this.tTO = setTimeout(function () {
 
         // randomize the timeout each time, if that's your thing
         this._setPace(this);
@@ -175,24 +175,24 @@
       }.bind(this), this.typePace);
     },
 
-    pause: function(time) {
+    pause: function (time) {
       time = time === undefined ? this.s.breakDelay : time;
-      this._to(function() {
+      this._to(function () {
         this._executeQueue();
       }.bind(this), time);
     },
 
-    break: function() {
+    break: function () {
       this.insert('<br>');
       this._executeQueue();
     },
 
-    mergeSet: function(s) {
+    mergeSet: function (s) {
       this.s = $.extend({}, this.s, s);
       this._executeQueue();
     },
 
-    _print: function(chr) {
+    _print: function (chr) {
       if (this.inTag) {
         $(this.tag, this.el).last().append(chr);
         if (this.tagCount < this.tagDuration) {
@@ -209,9 +209,9 @@
     If show cursor is enabled, move array starting point for the for loop back one,
     so that the loop will not find the closing tag and delete the cursor.
   */
-    delete: function(chars) {
+    delete: function (chars) {
 
-      this.deleteTimeout = setTimeout(function() {
+      this.deleteTimeout = setTimeout(function () {
 
         this._setPace();
 
@@ -280,7 +280,7 @@
       }.bind(this), this.deletePace);
     },
 
-    _isVisible: function() {
+    _isVisible: function () {
       var win = $(window);
 
       var viewport = {
@@ -320,14 +320,14 @@
     /*
       Advance the function queue to execute the next function after the previous one has finished.
     */
-    _executeQueue: function() {
+    _executeQueue: function () {
       if (this.queueIndex < this.queue.length) {
         var thisFunc = this.queue[this.queueIndex];
         this.queueIndex++;
 
         // delay execution if looping back to the beginning of the queue.
         if (this.isLooping && this.queueIndex === 1) {
-          this._to(function() {
+          this._to(function () {
             thisFunc[0].bind(this)(thisFunc[1]);
           }.bind(this), this.s.loopDelay / 2);
         } else {
@@ -337,7 +337,7 @@
         if (this.s.loop) {
           this.queueIndex = 0;
           this.isLooping = true;
-          this._to(function() {
+          this._to(function () {
             this.delete();
           }.bind(this), this.s.loopDelay / 2);
         } else {
@@ -346,25 +346,25 @@
       }
     },
 
-    _to: function(fn, time) {
-      setTimeout(function() {
+    _to: function (fn, time) {
+      setTimeout(function () {
         fn();
       }.bind(this), time);
     },
 
-    _elCheck: function() {
-      if (!this.s.startDelete && this.el.html().replace(/(\r\n|\n|\r)/gm,"").length > 0) {
+    _elCheck: function () {
+      if (!this.s.startDelete && this.el.html().replace(/(\r\n|\n|\r)/gm, "").length > 0) {
         this.s.strings = this.el.html().trim();
       } else if (this.s.startDelete) {
         this.stringsToDelete = this.el.html();
       }
     },
 
-    _toArray: function(str) {
+    _toArray: function (str) {
       return str.constructor === Array ? str.slice(0) : str.split('<br>');
     },
 
-    _cursor: function() {
+    _cursor: function () {
       if (this.s.cursor) {
         this.el.append('<span ' + this.style + 'class="ti-cursor">|</span>');
         var s = this.s.cursorSpeed;
@@ -373,11 +373,11 @@
           t.el.find('.ti-cursor').fadeTo(s / 2, 0).fadeTo(s / 2, 1);
           t._to(loop, s);
         })();
-		this.s.cursor = false;
+        this.s.cursor = false;
       }
     },
 
-    _setPace: function() {
+    _setPace: function () {
       var typeSpeed = this.s.speed;
       var deleteSpeed = this.s.deleteSpeed !== undefined ? this.s.deleteSpeed : this.s.speed / 3;
       var typeRange = typeSpeed / 2;
@@ -387,7 +387,7 @@
       this.deletePace = this.s.lifeLike ? this._randomInRange(deleteSpeed, deleteRange) : deleteSpeed;
     },
 
-    _randomInRange: function(value, range) {
+    _randomInRange: function (value, range) {
       return Math.abs(Math.random() * ((value + range) - (value - range)) + (value - range));
     },
 
@@ -396,7 +396,7 @@
     When a complete tag is found, slice the subarray to get the complete tag, insert it at the correct index,
     and delete the range of indexes where the indexed tag used to be.
     */
-    _rake: function(array) {
+    _rake: function (array) {
       for (var i = 0; i < array.length; i++) {
         array[i] = array[i].split('');
 
@@ -430,42 +430,42 @@
       Get the start & ending positions of the string inside HTML opening & closing angle brackets,
       and then create a DOM element of that string/tag name.
     */
-    _makeNode: function(char) {
+    _makeNode: function (char) {
       this.tag = $($.parseHTML(char));
       this._print(this.tag);
       this.inTag = true;
     }
   };
 
-  $.fn.tiType = function(str) {
+  $.fn.tiType = function (str) {
     var i = $(this).data('typeit');
     if (i === undefined) return $doc;
     i.queue.push([i.type, str]);
     return this;
   };
 
-  $.fn.tiDelete = function(num) {
+  $.fn.tiDelete = function (num) {
     var i = $(this).data('typeit');
     if (i === undefined) return $doc;
     i.queue.push([i.delete, num]);
     return this;
   };
 
-  $.fn.tiPause = function(time) {
+  $.fn.tiPause = function (time) {
     var i = $(this).data('typeit');
     if (i === undefined) return $doc;
     i.queue.push([i.pause, time]);
     return this;
   };
 
-  $.fn.tiBreak = function() {
+  $.fn.tiBreak = function () {
     var i = $(this).data('typeit');
     if (i === undefined) return $doc;
     i.queue.push([i.break]);
     return this;
   };
 
-  $.fn.tiSettings = function(settings) {
+  $.fn.tiSettings = function (settings) {
     var i = $(this).data('typeit');
     if (i === undefined) return $doc;
     i.queue.push([i.mergeSet, settings]);

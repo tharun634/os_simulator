@@ -1,9 +1,9 @@
-from django.conf.urls import url,include
+from django.conf.urls import url, include
 from django.contrib import admin
 from . import views
 
 app_name = 'disk'
-urlpatterns =[
+urlpatterns = [
     url(r'^$', views.home, name='index'),
     url(r'^(?P<pk>[0-9]+)/$', views.detail, name='detail'),
     url(r'^demo/$', views.demo, name='demo'),

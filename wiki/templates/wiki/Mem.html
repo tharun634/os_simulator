@@ -24,8 +24,10 @@
     <link rel="stylesheet" type="text/css" href="{%static 'wiki/css/animate.css' %}">
     <link rel="stylesheet" type="text/css" href="{%static 'wiki/css/prettyPhoto.css' %}">
     <link rel="stylesheet" type="text/css" href="{%static 'wiki/css/style.css' %}">
-    <link rel="stylesheet" type="text/css" href="{%static 'wiki/js/syntax-highlighter/styles/shCore.css' %}" media="all">
-    <link rel="stylesheet" type="text/css" href="{%static 'wiki/js/syntax-highlighter/styles/shThemeRDark.css' %}" media="all">
+    <link rel="stylesheet" type="text/css" href="{%static 'wiki/js/syntax-highlighter/styles/shCore.css' %}"
+        media="all">
+    <link rel="stylesheet" type="text/css" href="{%static 'wiki/js/syntax-highlighter/styles/shThemeRDark.css' %}"
+        media="all">
     <link rel="stylesheet" type="text/css" href="{%static 'wiki/css/custom.css' %}">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -63,55 +65,76 @@
             <div class="row">
 
                 <div class="col-md-3">
-                    <nav class="docs-sidebar" data-spy="affix" data-offset-top="300" data-offset-bottom="200" role="navigation">
+                    <nav class="docs-sidebar" data-spy="affix" data-offset-top="300" data-offset-bottom="200"
+                        role="navigation">
                         <ul class="nav">
                             <li><a href="#line1">Introduction</a></li>
                             <li><a href="#line2">Fixed size partitions</a>
-                              <ul class="nav">
-                                  <li><a href="#line2_1">Description</a></li>
-                                  <li><a href="#line2_2">Advantages</a></li>
-                                  <li><a href="#line2_3">Disadvantages</a></li>
-                                  <!-- <li><a href="#line2_4">Example</a></li> -->
-                              </ul>
+                                <ul class="nav">
+                                    <li><a href="#line2_1">Description</a></li>
+                                    <li><a href="#line2_2">Advantages</a></li>
+                                    <li><a href="#line2_3">Disadvantages</a></li>
+                                    <!-- <li><a href="#line2_4">Example</a></li> -->
+                                </ul>
                             </li>
                             <li><a href="#line3">Variable size partitions</a>
-                              <ul class="nav">
-                                  <li><a href="#line3_1">Description</a></li>
-                                  <li><a href="#line3_2">Advantages</a></li>
-                                  <li><a href="#line3_3">Disadvantages</a></li>
-                                  <!-- <li><a href="#line3_4">Example</a></li> -->
-                              </ul>
+                                <ul class="nav">
+                                    <li><a href="#line3_1">Description</a></li>
+                                    <li><a href="#line3_2">Advantages</a></li>
+                                    <li><a href="#line3_3">Disadvantages</a></li>
+                                    <!-- <li><a href="#line3_4">Example</a></li> -->
+                                </ul>
                             </li>
                         </ul>
-                    </nav >
+                    </nav>
                 </div>
                 <div class="col-md-9">
-                    <section id = "line1" class="welcome">
+                    <section id="line1" class="welcome">
 
                         <div class="row">
                             <div class="col-md-12 left-align">
-                                <h2 class="dark-text">Introduction<hr></h2>
+                                <h2 class="dark-text">Introduction
+                                    <hr>
+                                </h2>
                                 <div class="row">
 
                                     <div class="col-md-12 full">
-                                       
+
 
                                         <hr>
                                         <div>
-                                            <p>Every process that has to execute on the CPU needs a certain amount of memory. Memory management deals with the allocation of requested memory to each process for its execution. It is required in an operating system because the size of the main memory is limited, but the number of process that a computer can execute is not. Therefore, OS should make sure memory is allocated efficiently, and memory wastage is minimum.
+                                            <p>Every process that has to execute on the CPU needs a certain amount of
+                                                memory. Memory management deals with the allocation of requested memory
+                                                to each process for its execution. It is required in an operating system
+                                                because the size of the main memory is limited, but the number of
+                                                process that a computer can execute is not. Therefore, OS should make
+                                                sure memory is allocated efficiently, and memory wastage is minimum.
                                             </p>
 
-                                            <p>As a processs enter the system, they are put into an input queue. The OS takes into account the memory requirements of each processes and the amount of available memory. When a process is allocated space, it is loaded into memory and it can then compete for CPU time. When a process terminates, it releases its memory, which the OS may then fill with another process from the input queue.
+                                            <p>As a processs enter the system, they are put into an input queue. The OS
+                                                takes into account the memory requirements of each processes and the
+                                                amount of available memory. When a process is allocated space, it is
+                                                loaded into memory and it can then compete for CPU time. When a process
+                                                terminates, it releases its memory, which the OS may then fill with
+                                                another process from the input queue.
                                             </p>
 
                                             <h4>Types</h4>
-                                            <p>Main memory is thought of as a continuous array of locations. There are two ways we can utilise this continuous memory two accomodate for processes:
-</p>
+                                            <p>Main memory is thought of as a continuous array of locations. There are
+                                                two ways we can utilise this continuous memory two accomodate for
+                                                processes:
+                                            </p>
                                             <ol>
                                                 <li>Fixed Size Partition</li>
-                                                <p>The entire main memory available for user processes is divided into several fixed-size partitions. And each partition may contain exactly one process. When a partition is free, a process is selected from input queue and is loaded into the free partition.</p>
+                                                <p>The entire main memory available for user processes is divided into
+                                                    several fixed-size partitions. And each partition may contain
+                                                    exactly one process. When a partition is free, a process is selected
+                                                    from input queue and is loaded into the free partition.</p>
                                                 <li>Variable Size Partition</li>
-                                                <p>Here, the OS keeps a table indicating which parts of the memory are available and which are occupied. Initally, all memory is available for user processes and is considered one large block of available memory, a hole.</p>
+                                                <p>Here, the OS keeps a table indicating which parts of the memory are
+                                                    available and which are occupied. Initally, all memory is available
+                                                    for user processes and is considered one large block of available
+                                                    memory, a hole.</p>
                                             </ol>
                                         </div>
                                     </div>
@@ -119,56 +142,70 @@
                                 <!-- end row -->
                             </div>
                         </div>
-                    <hr>
+                        <hr>
                     </section>
 
                     <section id="line2" class="section">
 
                         <div class="row">
                             <div class="col-md-12 left-align">
-                                <h2 class="dark-text">Fixed Size Parition<a href="#top">#back to top</a><hr></h2>
+                                <h2 class="dark-text">Fixed Size Parition<a href="#top">#back to top</a>
+                                    <hr>
+                                </h2>
                             </div>
                             <!-- end col -->
                         </div>
                         <!-- end row -->
 
                         <div class="row">
-                                <h4 id="line2_1">Description</h4>
-                                <p>As mentioned before, the continuous main memory is divided into several fixed-size partitions, each of which can hold only on processes. The size of the partitions is determined by the OS, and the number of blocks is determined by the total size of the main memory.
-When a process is added, an available free partition is allocated to the process (provided, the requirements of the process is less than the size of a partition).
-Once a process is removed/completed, the block allocated to it is freed for any other process to be accomodated.
-                                </p>
-                                <p>
-                                  There are 3 ways an available partitions can be allocated to the process:
-                                <ol>
-                                  <li>First Fit:</li>
-                                  <p>The first available partition that is large enough to accomodate the process is allocated to the process.</p>
-                                  <li>Best Fit:</li>
-                                  <p>The smallest available partition that is large enough to accomodate the process is allocated to the process.</p>
-                                  <li>Worst Fit:</li>
-                                  <p>The largest available partition that is large enough to accomodate the process is allocated to the process.</p>
-                                  <!-- end col -->
+                            <h4 id="line2_1">Description</h4>
+                            <p>As mentioned before, the continuous main memory is divided into several fixed-size
+                                partitions, each of which can hold only on processes. The size of the partitions is
+                                determined by the OS, and the number of blocks is determined by the total size of the
+                                main memory.
+                                When a process is added, an available free partition is allocated to the process
+                                (provided, the requirements of the process is less than the size of a partition).
+                                Once a process is removed/completed, the block allocated to it is freed for any other
+                                process to be accomodated.
+                            </p>
+                            <p>
+                                There are 3 ways an available partitions can be allocated to the process:
+                            <ol>
+                                <li>First Fit:</li>
+                                <p>The first available partition that is large enough to accomodate the process is
+                                    allocated to the process.</p>
+                                <li>Best Fit:</li>
+                                <p>The smallest available partition that is large enough to accomodate the process is
+                                    allocated to the process.</p>
+                                <li>Worst Fit:</li>
+                                <p>The largest available partition that is large enough to accomodate the process is
+                                    allocated to the process.</p>
+                                <!-- end col -->
                         </div>
                         <!-- end row -->
 
                         <hr>
                         <div class="row">
-                                <h4 id="line2_2">Advantages</h4>
-                                <ol>
-                                    <li>It is a very simple method of allocation.</li>
-                                    <li>Does not require any overhead of storing which locations are free and which are not.</li>
-                                </ol>
+                            <h4 id="line2_2">Advantages</h4>
+                            <ol>
+                                <li>It is a very simple method of allocation.</li>
+                                <li>Does not require any overhead of storing which locations are free and which are not.
+                                </li>
+                            </ol>
                             <!-- end col -->
                         </div>
                         <hr>
 
                         <div class="row">
-                                <h4 id="line2_3">Disadvantages</h4>
-                                <ol>
-                                    <li>The number of processes cannot be more than the number of partitions in the memory. (Degree of multiprogramming is bound by the number of partitions).</li>
-                                    <li>Process memory requirement cannot exceed the size of a partition.</li>
-                                    <li>Internal fragmentation is a problem: If the memory requirement of a process is less than the size of a partition, the left-over memory cannot be allocated, and is wasted.</li>
-                                  </ol>
+                            <h4 id="line2_3">Disadvantages</h4>
+                            <ol>
+                                <li>The number of processes cannot be more than the number of partitions in the memory.
+                                    (Degree of multiprogramming is bound by the number of partitions).</li>
+                                <li>Process memory requirement cannot exceed the size of a partition.</li>
+                                <li>Internal fragmentation is a problem: If the memory requirement of a process is less
+                                    than the size of a partition, the left-over memory cannot be allocated, and is
+                                    wasted.</li>
+                            </ol>
                             <!-- end col -->
                         </div>
                         <hr>
@@ -191,46 +228,62 @@ Once a process is removed/completed, the block allocated to it is freed for any 
 
                         <div class="row">
                             <div class="col-md-12 left-align">
-                                <h2 class="dark-text">Variable Size Parition<a href="#top">#back to top</a><hr></h2>
+                                <h2 class="dark-text">Variable Size Parition<a href="#top">#back to top</a>
+                                    <hr>
+                                </h2>
                             </div>
                             <!-- end col -->
                         </div>
                         <!-- end row -->
 
                         <div class="row">
-                                <h4 id="line3_1">Description</h4>
-                                <p>As mentioned before, all memory is initially available for user processes and is considered one large block of available memory, a hole. As and when a process arrives, the exact amount of memory it requires is allocated for the process, and the remaining is free to allocate other processes.</p>
-                                <p>When a process is removed/completed, the memory allocated to it is freed. If there is free memory on any of its sides, the process’ memory is combined with the free memory, to create one large free block (hole) again.</p>
-                                <p>This addition and removal of processes creates discontinuous holes (free memory slots). There are 3 ways this free memory can be allocated:</p>
-                                <ol>
-                                  <li>First Fit:</li>
-                                  <p>The first available hole that is large enough to accomodate the process is allocated to the process.</p>
-                                  <li>Best Fit:</li>
-                                  <p>The smallest available hole that is large enough to accomodate the process is allocated to the process.</p>
-                                  <li>Worst Fit:</li>
-                                  <p>The largest available hole that is large enough to accomodate the process is allocated to the process.</p>
-                                  <!-- end col -->
+                            <h4 id="line3_1">Description</h4>
+                            <p>As mentioned before, all memory is initially available for user processes and is
+                                considered one large block of available memory, a hole. As and when a process arrives,
+                                the exact amount of memory it requires is allocated for the process, and the remaining
+                                is free to allocate other processes.</p>
+                            <p>When a process is removed/completed, the memory allocated to it is freed. If there is
+                                free memory on any of its sides, the process’ memory is combined with the free memory,
+                                to create one large free block (hole) again.</p>
+                            <p>This addition and removal of processes creates discontinuous holes (free memory slots).
+                                There are 3 ways this free memory can be allocated:</p>
+                            <ol>
+                                <li>First Fit:</li>
+                                <p>The first available hole that is large enough to accomodate the process is allocated
+                                    to the process.</p>
+                                <li>Best Fit:</li>
+                                <p>The smallest available hole that is large enough to accomodate the process is
+                                    allocated to the process.</p>
+                                <li>Worst Fit:</li>
+                                <p>The largest available hole that is large enough to accomodate the process is
+                                    allocated to the process.</p>
+                                <!-- end col -->
                         </div>
                         <!-- end row -->
 
                         <hr>
                         <div class="row">
-                                <h4 id="line3_2">Advantages</h4>
-                                <ol>
-                                    <li>The problem of internal fragmentation does not exist, because only the required amount of memory that a process needs is allocated, and not any more.</li>
-                                    <li>Allows the process to have a memory requirement of any size (lesser than the total available memory)</li>
-                                    <li>Allows any number of process to be allocated at a time.</li>
-                                </ol>
+                            <h4 id="line3_2">Advantages</h4>
+                            <ol>
+                                <li>The problem of internal fragmentation does not exist, because only the required
+                                    amount of memory that a process needs is allocated, and not any more.</li>
+                                <li>Allows the process to have a memory requirement of any size (lesser than the total
+                                    available memory)</li>
+                                <li>Allows any number of process to be allocated at a time.</li>
+                            </ol>
                             <!-- end col -->
                         </div>
                         <hr>
 
                         <div class="row">
-                                <h4 id="line3_3">Disadvantages</h4>
-                                <ol>
-                                    <li>A table has to be maintained to indicate which parts of the memory are available and which are occupied.</li>
-                                    <li>External fragmentation is a problem: The total free space available might be sufficient to accomodate the process, but the free holes might not be contiguous, so the process cannot be allocated.</li>
-                                </ol>
+                            <h4 id="line3_3">Disadvantages</h4>
+                            <ol>
+                                <li>A table has to be maintained to indicate which parts of the memory are available and
+                                    which are occupied.</li>
+                                <li>External fragmentation is a problem: The total free space available might be
+                                    sufficient to accomodate the process, but the free holes might not be contiguous, so
+                                    the process cannot be allocated.</li>
+                            </ol>
                             <!-- end col -->
                         </div>
                         <hr>

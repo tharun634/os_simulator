@@ -17,6 +17,5 @@ class Adv(models.Model):
     alg = models.ForeignKey(DiskSchedAlg, on_delete=models.CASCADE)
     text = models.CharField(max_length=200)
 
-
     def __str__(self):
         return self.text

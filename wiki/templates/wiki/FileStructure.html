@@ -15,7 +15,7 @@
     <meta name="author" content="">
     <meta name="keywords" content="">
 
-    <title>File Structure</title>
+    <title>File System</title>
 
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{%static 'wiki/fonts/font-awesome-4.3.0/css/font-awesome.min.css' %}">
@@ -24,8 +24,10 @@
     <link rel="stylesheet" type="text/css" href="{%static 'wiki/css/animate.css' %}">
     <link rel="stylesheet" type="text/css" href="{%static 'wiki/css/prettyPhoto.css' %}">
     <link rel="stylesheet" type="text/css" href="{%static 'wiki/css/style.css' %}">
-    <link rel="stylesheet" type="text/css" href="{%static 'wiki/js/syntax-highlighter/styles/shCore.css' %}" media="all">
-    <link rel="stylesheet" type="text/css" href="{%static 'wiki/js/syntax-highlighter/styles/shThemeRDark.css' %}" media="all">
+    <link rel="stylesheet" type="text/css" href="{%static 'wiki/js/syntax-highlighter/styles/shCore.css' %}"
+        media="all">
+    <link rel="stylesheet" type="text/css" href="{%static 'wiki/js/syntax-highlighter/styles/shThemeRDark.css' %}"
+        media="all">
     <link rel="stylesheet" type="text/css" href="{%static 'wiki/css/custom.css' %}">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -47,7 +49,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="big-title text-center">
-                            <h1>File Structure</h1>
+                            <h1>File System</h1>
                         </div>
                         <!-- end title -->
                     </div>
@@ -63,37 +65,39 @@
             <div class="row">
 
                 <div class="col-md-3">
-                    <nav class="docs-sidebar" data-spy="affix" data-offset-top="300" data-offset-bottom="200" role="navigation">
+                    <nav class="docs-sidebar" data-spy="affix" data-offset-top="300" data-offset-bottom="200"
+                        role="navigation">
                         <ul class="nav">
                             <li><a href="#line1">Introduction</a></li>
-                            <li><a href="#line2">Banker's Algorithm</a></li>
-                            <li><a href="#line3">Safe State and Safe Sequence</a></li>
-                            <li><a href="#line4">Data Structures used in Banker's Algorithm</a></li>
-                            <li><a href="#line5">The Safety Algorithm</a></li>
-                            <li><a href="#line6">Resource Request Algorithm</a></li>
+                            <li><a href="#line2">File Structure</a></li>
+                            <li><a href="#line3">File Type</a></li>
+                            <li><a href="#line4">File Access Mechanisms</a></li>
                         </ul>
-                    </nav >
+                    </nav>
                 </div>
                 <div class="col-md-9">
-                    <section id = "line1" class="welcome">
+                    <section id="line1" class="welcome">
 
                         <div class="row">
                             <div class="col-md-12 left-align">
-                                <h2 class="dark-text">Introduction<hr></h2>
+                                <h2 class="dark-text">Introduction
+                                    <hr>
+                                </h2>
                                 <div class="row">
 
                                     <div class="col-md-12 full">
-                                        
+
 
                                         <hr>
                                         <div>
-                                            <p> File System provide efficient access to the disk by allowing data to be stored, located and retrieved in a convenient way. A file System must be able to store the file, locate the file and retrieve the file.
+                                            <p> File System provide efficient access to the disk by allowing data to be
+                                                stored, located and retrieved in a convenient way. A file System must be
+                                                able to store the file, locate the file and retrieve the file.
                                             </p>
 
-                                            <p>Most of the Operating Systems use layering approach for every task including file systems. Every layer of the file system is responsible for some activities.
-                                            </p>
-
-                                            <p> A page replacement algorithm looks at the limited information about accessing the pages provided by hardware, and tries to select which pages should be replaced to minimize the total number of page misses, while balancing it with the costs of primary storage and processor time of the algorithm itself. There are many different page replacement algorithms. We evaluate an algorithm by running it on a particular string of memory reference and computing the number of page faults.
+                                            <p>Most of the Operating Systems use layering approach for every task
+                                                including file systems. Every layer of the file system is responsible
+                                                for some activities.
                                             </p>
                                         </div>
                                     </div>
@@ -101,21 +105,38 @@
                                 <!-- end row -->
                             </div>
                         </div>
-                    <hr>
+                        <hr>
                     </section>
 
                     <section id="line2" class="section">
 
                         <div class="row">
                             <div class="col-md-12 left-align">
-                                <h2 class="dark-text">File Structure<a href="#top">go to top</a><hr></h2>
+                                <h2 class="dark-text">File Structure<a href="#top">go to top</a>
+                                    <hr>
+                                </h2>
                             </div>
                             <!-- end col -->
                         </div>
                         <!-- end row -->
 
                         <div class="row">
-                                <p>It is a deadlock avoidance algorithm which dynamically examines the resource allocation state to ensure that a deadlock does not occur. To achieve this, a system should have a knowledge of the complete sequence of requests and releases for each process to avoid a future possible deadlock</p>
+                            <p>A File Structure should be according to a required format that the operating system can
+                                understand.<br>
+                            <ol> 
+                                <li> A file has a certain defined structure according to its type.</li>
+
+                                <li> A text file is a sequence of characters organized into lines.</li>
+
+                                <li> A source file is a sequence of procedures and functions.</li>
+
+                               <li>An object file is a sequence of bytes organized into blocks that are understandable
+                                by the machine.</li>
+
+                                <li> When operating system defines different file structures, it also contains the code to
+                                support these file structure. Unix, MS-DOS support minimum number of file structure.</li>
+                            </ol>
+                            </p>
                             <!-- end col -->
                         </div>
                         <!-- end row -->
@@ -126,15 +147,38 @@
                         <hr>
                         <div class="row">
                             <div class="col-md-12 left-align">
-                                <h2 class="dark-text">Safe State and Safe Sequence<a href="#top">go to top</a><hr></h2>
+                                <h2 class="dark-text">File Type<a href="#top">go to top</a>
+                                    <hr>
+                                </h2>
                             </div>
                             <!-- end col -->
                         </div>
                         <!-- end row -->
 
-                        <div class="row">
-                                <p>A state is safe if the system can allocate resources to each process (up to its maximum) in some order and still avoid a deadlock. More formally, a system is in a safe state only if there exists a safe sequence. A sequence of processes <P1, P2, ..., Pn> is a safe sequence for the current allocation state if, for each Pi, the resource requests that Pi can still make can be satisfied by the currently available resources plus the resources held by all Pj, with j <i.</p>
-                            <!-- end col -->
+                        <div class="row"><ol>
+                            <p>File type refers to the ability of the operating system to distinguish different types of file such as text files source files and binary files etc. Many operating systems support many types of files. Operating system like MS-DOS and UNIX have the following types of files−<br>
+                                <br><li>Ordinary files</li>
+                                
+                                    These are the files that contain user information.<br>
+                                    These may have text, databases or executable program.<br>
+                                    The user can apply various operations on such files like add, modify, delete or even remove the entire file.<br>
+                                    <br>
+                                <li>Directory files</li>
+                                
+                                    These files contain list of file names and other information related to these files.<br>
+                                    <br>
+                                <li>Special files</li>
+                                
+                                    These files are also known as device files.<br>
+                                    These files represent physical device like disks, terminals, printers, networks, tape drive etc.<br>
+                                    <br>
+                                <li>These files are of two types −</li>
+                                
+                                    Character special files − data is handled character by character as in case of terminals or printers.<br>
+                                
+                                    Block special files − data is handled in blocks as in the case of disks and tapes.<br>
+                                 <i.< /p></ol>
+                                        <!-- end col -->
                         </div>
                         <!-- end row -->
                         <hr>
@@ -146,114 +190,55 @@
                         <div class="row">
                             <hr>
                             <div class="col-md-12 left-align">
-                                <h2 class="dark-text">Data Structures used in Banker’s Algorithm<a href="#top">go to top</a><hr></h2>
+                                <h2 class="dark-text">File Access Mechanisms<a href="#top">go to
+                                        top</a>
+                                    <hr>
+                                </h2>
                             </div>
                             <!-- end col -->
                         </div>
                         <!-- end row -->
 
                         <div class="row">
-                                <pre>Let n be the number of processes in the system and m be the number of resource types
+                            <p><ol>
+                                File access mechanism refers to the manner in which the records of a file may be accessed. There are several ways to access files−<br>
+    <ol>                            <br>
+    <li>Sequential access</li>
+    <li>Direct Random access</li>
+    <li>Indexed sequential access</li>
+    </ol>
+    <br>
+<li>Sequential access</li>
+<br>
+A sequential access is that in which the records are accessed in some sequence, i.e., the information in the file is processed in order, one record after the other. This access method is the most primitive one. Example: Compilers usually access files in this fashion.<br>
+<br><li>Direct/Random access</li>
+<br>
+    Random access file organization provides, accessing the records directly.<br>
 
-Available:  A vector of length m indicates the number of available resources of each type
-Max:  An n × m matrix defines the maximum demand of each process
-Allocation: An n × m matrix defines the number of resources of each type currently allocated to each process.
-Need:  An n × m matrix indicates the remaining resource need of each process. Need[i][j] = Max[i][j] − Allocation[i][j].
+    Each record has its own address on the file with by the help of which it can be directly accessed for reading or writing.<br>
 
-We can treat each row in the matrices Allocation and Need as vectors and refer to them as Allocation[i] and Need[i]. The vector Allocation[i] specifies the resources currently allocated to process P[i]; the vector Need[i] specifies the additional resources that process P[i] may still request to complete its task.
+    The records need not be in any sequence within the file and they need not be in adjacent locations on the storage medium.<br>
+    <br>
+<li>Indexed sequential access</li>
+<br>
+    This mechanism is built up on base of sequential access.<br>
+    An index is created for each file which contains pointers to various blocks.<br>
+    Index is searched sequentially and its pointer is used to access the file directly.<br>
+    <br>
 
-                                </pre>
+                            </ol>
+
+
+                                </p>
                             <!-- end col -->
                         </div>
                         <!-- end row -->
 
                         <hr>
                     </section>
-
-                    <section id="line5" class="section">
                         <hr>
-                        <div class="row">
-                            <div class="col-md-12 left-align">
-                                <h2 class="dark-text">The Safety Algorithm<a href="#top">go to top</a><hr></h2>
-                            </div>
-                            <!-- end col -->
-                        </div>
-                        <!-- end row -->
 
-                        <div class="row">
-
-                                  <p>This algorithm can be described as follows:</p>
-                                <pre>
-1. Let Work and Finish be vectors of length m and n, respectively. Initialize Work = Available and Finish[i] = false for i = 0, 1, ..., n − 1.
-
-2. Find an index i such that both
-a. Finish[i] == false
-b. Need[i] ≤ Work
-
-If no such i exists, go to step 4.
-
-3. Work = Work + Allocation[i]
-Finish[i] = true
-Go to step 2.
-
-4. If Finish[i] == true for all i, then the system is in a safe state.
-
-
-                                </pre>
-                            <!-- end col -->
-                        </div>
-                        <!-- end row -->
-
-                        <section id="line6" class="section">
-                            <hr>
-                            <div class="row">
-                                <div class="col-md-12 left-align">
-                                    <h2 class="dark-text">Resource Request Algorithm<a href="#top">go to top</a><hr></h2>
-                                </div>
-                                <!-- end col -->
-                            </div>
-                            <!-- end row -->
-
-                            <div class="row">
-                                    <pre>
-Let Request[i] be the request vector for process P[i]. If Request[i][j] == k, then process P[i] wants k instances of resource type R[j]. When a request for resources is made by process P[i], the following actions are taken:
-
-1. If Request[i] ≤Need[i], go to step 2. Otherwise, raise an error condition, since the process has exceeded its maximum claim.
-
-2. If Request[i] ≤ Available, go to step 3. Otherwise, P[i] must wait, since the resources are not available.
-
-3. Have the system pretend to have allocated the requested resources to process P[i] by modifying the state as follows:
-
-Available = Available–Request[i];
-Allocation[i] = Allocation[i] + Request[i];
-Need[i] = Need[i] –Request[i];
-
-If the resulting resource-allocation state is safe, the transaction is completed, and process P[i] is allocated its resources. However, if the new state is unsafe, then P[i] must wait for Request[i], and the old resource-allocation state is restored.
-
-
-                                    </pre>
-                                <!-- end col -->
-                            </div>
-                            <!-- end row -->
-                            <!-- <div class = "row">
-                              <h4 id ="line4_4">Example</h4>
-                            </div>
-                            <div class="col-md-6">
-                                <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
-                                <h4>Input</h4>
-                            </div>
-                            <div class="col-md-6">
-                                <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
-                                <h4>Output</h4>
-                            </div> -->
-
-                        <hr>
-                    </section>
-
-
-                      <hr>
-
-                    <!-- end section -->
+                        <!-- end section -->
                 </div>
                 <!-- // end .col -->
 
@@ -266,18 +251,18 @@ If the resulting resource-allocation state is safe, the transaction is completed
     </div>
     <!-- end wrapper -->
 
-    <script src="{%static 'wiki/js/jquery.min.js' %}"></script>
-    <script src="{%static 'wiki/js/bootstrap.min.js' %}"></script>
-    <script src="{%static 'wiki/js/retina.js' %}"></script>
-    <script src="{%static 'wiki/js/jquery.fitvids.js' %}"></script>
-    <script src="{%static 'wiki/js/wow.js' %}"></script>
-    <script src="{%static 'wiki/js/jquery.prettyPhoto.js' %}"></script>
-    <script src="{%static 'wiki/js/custom.js' %}"></script>
-    <script src="{%static 'wiki/js/main.js' %}"></script>
-    <script src="{%static 'wiki/js/syntax-highlighter/scripts/shCore.js' %}"></script>
-    <script src="{%static 'wiki/js/syntax-highlighter/scripts/shBrushXml.js' %}"></script>
-    <script src="{%static 'wiki/js/syntax-highlighter/scripts/shBrushCss.js' %}"></script>
-    <script src="{%static 'wiki/js/syntax-highlighter/scripts/shBrushJScript.js' %}"></script>
+    <script src="{% static 'wiki/js/jquery.min.js' %}"></script>
+    <script src="{% static 'wiki/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'wiki/js/retina.js' %}"></script>
+    <script src="{% static 'wiki/js/jquery.fitvids.js' %}"></script>
+    <script src="{% static 'wiki/js/wow.js' %}"></script>
+    <script src="{% static 'wiki/js/jquery.prettyPhoto.js' %}"></script>
+    <script src="{% static 'wiki/js/custom.js' %}"></script>
+    <script src="{% static 'wiki/js/main.js' %}"></script>
+    <script src="{% static 'wiki/js/syntax-highlighter/scripts/shCore.js' %}"></script>
+    <script src="{% static 'wiki/js/syntax-highlighter/scripts/shBrushXml.js' %}"></script>
+    <script src="{% static 'wiki/js/syntax-highlighter/scripts/shBrushCss.js' %}"></script>
+    <script src="{% static 'wiki/js/syntax-highlighter/scripts/shBrushJScript.js' %}"></script>
 
 </body>
 

@@ -1,9 +1,9 @@
-from django.conf.urls import url,include
+from django.conf.urls import url, include
 from django.contrib import admin
 from . import views
 
 app_name = 'page'
-urlpatterns =[
+urlpatterns = [
     url(r'^page/$', views.page, name='page'),
     url(r'^alloc/$', views.alloc, name='alloc'),
     url(r'^(?P<pk>[0-9]+)/$', views.detail, name='detail'),

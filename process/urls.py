@@ -4,7 +4,7 @@ from . import views
 
 app_name = 'process'
 
-urlpatterns =[
+urlpatterns = [
     url(r'^$', views.home, name='index'),
     url(r'^(?P<pk>[0-9]+)/$', views.detail, name='detail'),
     url(r'^demo/(?P<pk>[0-9]+)/$', views.demo, name='demo'),

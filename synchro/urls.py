@@ -1,10 +1,10 @@
-from django.conf.urls import url,include
+from django.conf.urls import url, include
 from django.contrib import admin
 from . import views
 
 app_name = 'semaphores'
 
-urlpatterns =[
+urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^socket/$', views.socket, name='socket'),
     url(r'^deadlocks/$', views.deadlocks, name='deadlocks'),

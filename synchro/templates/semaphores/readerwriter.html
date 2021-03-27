@@ -2,105 +2,110 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'ossim/css/style.css' %}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'ossim/css/style.css' %}">
 </head>
 
 <body>
-<nav class="navbar navbar-expand-md navbar-light bg-light">
-<h1 class="navbar-brand">Reader Writer</h1>
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-    <ul class="navbar-nav">
-    <li class="nav-item">
-        <a class="nav-link" href="{% url 'process:index' %}">Process Scheduling</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="{% url 'semaphores:index' %}">Semaphores</a>
-    </li>
-    </ul>
-</div>
-</nav>
+  <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <h1 class="navbar-brand">Reader Writer</h1>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'process:index' %}">Process Scheduling</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'semaphores:index' %}">Semaphores</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
   <div class="container-fluid">
     <form onsubmit="return false">
       <p><br /></p>
-      <h5>First user:  </h5>
-      Read: <input type = "checkbox", name = "first">
-      Write: <input type = "checkbox" name = "first"><br>
+      <h5>First user: </h5>
+      Read: <input type="checkbox" , name="first">
+      Write: <input type="checkbox" name="first"><br>
       <p style="font-size:10px"><br /></p>
       <h5>Second user: </h5>
-      Read: <input type = "checkbox", name = "second">
-      Write: <input type = "checkbox" name = "second">
+      Read: <input type="checkbox" , name="second">
+      Write: <input type="checkbox" name="second">
       <p style="font-size:10px"><br /></p>
       <h5>Third user: </h5>
-      Read: <input type = "checkbox", name = "third">
-      Write: <input type = "checkbox" name = "third">
+      Read: <input type="checkbox" , name="third">
+      Write: <input type="checkbox" name="third">
       <p style="font-size:10px"><br /></p>
       <h5>Fourth user: </h5>
-      Read: <input type = "checkbox", name = "fourth">
-      Write: <input type = "checkbox" name = "fourth">
+      Read: <input type="checkbox" , name="fourth">
+      Write: <input type="checkbox" name="fourth">
       <p style="font-size:10px"><br /></p>
       <h5>Fifth user: </h5>
-      Read: <input type = "checkbox", name = "fifth">
-      Write: <input type = "checkbox" name = "fifth">
+      Read: <input type="checkbox" , name="fifth">
+      Write: <input type="checkbox" name="fifth">
       <p style="font-size:10px"><br /></p>
       <h5>Sixth user: </h5>
-      Read: <input type = "checkbox", name = "sixth">
-      Write: <input type = "checkbox" name = "sixth">
+      Read: <input type="checkbox" , name="sixth">
+      Write: <input type="checkbox" name="sixth">
       <p style="font-size:10px"><br /></p>
       <h5>Seventh user: </h5>
-      Read: <input type = "checkbox", name = "seventh">
-      Write: <input type = "checkbox" name = "seventh">
+      Read: <input type="checkbox" , name="seventh">
+      Write: <input type="checkbox" name="seventh">
 
       <br /><br />
-      <input type = "submit", name ="Go!", onclick="update()", class="btn btn-primary">
+      <input type="submit" , name="Go!" , onclick="update()" , class="btn btn-primary">
     </form>
 
-    <button type = "button", id ="one", name = "one", style="height:80px;width:165px;position:absolute;top:15%;left:20%;background-color:white"> </button>
-    <button type = "button", id ="two", name = "two", style="height:80px;width:165px;position:absolute;top:27%;left:20%;background-color:white"> </button>
-    <button type = "button", id ="three", name = "three", style="height:80px;width:165px;position:absolute;top:39%;left:20%;background-color:white"> </button>
-    <button type = "button", id ="four", name = "four", style="height:80px;width:165px;position:absolute;top:51%;left:20%;background-color:white"> </button>
-    <button type = "button", id ="five", name = "five", style="height:80px;width:165px;position:absolute;top:63%;left:20%;background-color:white"> </button>
-    <button type = "button", id ="six", name = "six", style="height:80px;width:165px;position:absolute;top:75%;left:20%;background-color:white"> </button>
-    <button type = "button", id ="seven", name = "seven", style="height:80px;width:165px;position:absolute;top:87%;left:20%;background-color:white"> </button>
+    <button type="button" , id="one" , name="one" ,
+      style="height:80px;width:165px;position:absolute;top:15%;left:20%;background-color:white"> </button>
+    <button type="button" , id="two" , name="two" ,
+      style="height:80px;width:165px;position:absolute;top:27%;left:20%;background-color:white"> </button>
+    <button type="button" , id="three" , name="three" ,
+      style="height:80px;width:165px;position:absolute;top:39%;left:20%;background-color:white"> </button>
+    <button type="button" , id="four" , name="four" ,
+      style="height:80px;width:165px;position:absolute;top:51%;left:20%;background-color:white"> </button>
+    <button type="button" , id="five" , name="five" ,
+      style="height:80px;width:165px;position:absolute;top:63%;left:20%;background-color:white"> </button>
+    <button type="button" , id="six" , name="six" ,
+      style="height:80px;width:165px;position:absolute;top:75%;left:20%;background-color:white"> </button>
+    <button type="button" , id="seven" , name="seven" ,
+      style="height:80px;width:165px;position:absolute;top:87%;left:20%;background-color:white"> </button>
 
-    <button type = "button", id ="lock", class ="btn btn-primary", name = "lock", style="height:100px;width:200px;position:absolute;top:20%;left:75%;font-size:20px">Writing lock: </button>
+    <button type="button" , id="lock" , class="btn btn-primary" , name="lock" ,
+      style="height:100px;width:200px;position:absolute;top:20%;left:75%;font-size:20px">Writing lock: </button>
 
     <div>
       <form>
-        <textarea id="doc" style="height:600px;width:450px;position:absolute;top:11%;left:36%;font-size:20px" disabled=""> </textarea>
+        <textarea id="doc" style="height:600px;width:450px;position:absolute;top:11%;left:36%;font-size:20px"
+          disabled=""> </textarea>
       </form>
     </div>
-    <script type = "text/javascript">
-      var mutex =-1;
-      function update()
-      {
-        var checkW =0;
-        for(var i=0;i<15;i++)
-        {
-          if(i%2 != 0 && document.forms[0].elements[i].checked==true)
-          {
-            checkW=1;
+    <script type="text/javascript">
+      var mutex = -1;
+      function update() {
+        var checkW = 0;
+        for (var i = 0; i < 15; i++) {
+          if (i % 2 != 0 && document.forms[0].elements[i].checked == true) {
+            checkW = 1;
           }
         }
-        if(checkW==0)
-        {
-          mutex=-1;
+        if (checkW == 0) {
+          mutex = -1;
           var change = document.getElementById("lock");
-          change.innerHTML ="Writing Lock:"
+          change.innerHTML = "Writing Lock:"
         }
 
-        for(var i=0;i<15;i++)
-        {
-          if(i%2 !=0 && document.forms[0].elements[i].checked == true && (mutex==(i-1)/2 || mutex==-1))
-          {
-            for(var j=0;j<15;j++)
-            {
-              if(j!=i/* && j%2 ==0*/)// important change made here
+        for (var i = 0; i < 15; i++) {
+          if (i % 2 != 0 && document.forms[0].elements[i].checked == true && (mutex == (i - 1) / 2 || mutex == -1)) {
+            for (var j = 0; j < 15; j++) {
+              if (j != i/* && j%2 ==0*/)// important change made here
               {
                 document.forms[0].elements[j].checked = false
               }
@@ -108,8 +113,7 @@
           }
         }
 
-        for(var i=0;i<15;i++)
-        {
+        for (var i = 0; i < 15; i++) {
           document.getElementById("one").style.backgroundColor = '#FFFFFF';
           document.getElementById("two").style.backgroundColor = '#FFFFFF';
           document.getElementById("three").style.backgroundColor = '#FFFFFF';
@@ -119,113 +123,105 @@
           document.getElementById("seven").style.backgroundColor = '#FFFFFF';
         }
 
-            if(document.forms[0].elements[0].checked == true)
-            {
-              document.getElementById("one").style.backgroundColor = '#00BFFF';
-              mutex =-1;
-            }
-            if(document.forms[0].elements[2].checked == true)
-            {
-              document.getElementById("two").style.backgroundColor = '#00BFFF';
-              mutex =-1;
-            }
-            if(document.forms[0].elements[4].checked == true)
-            {
-              document.getElementById("three").style.backgroundColor = '#00BFFF';
-              mutex =-1;
-            }
-            if(document.forms[0].elements[6].checked == true)
-            {
-              document.getElementById("four").style.backgroundColor = '#00BFFF';
-              mutex =-1;
-            }
-            if(document.forms[0].elements[8].checked == true)
-            {
-              document.getElementById("five").style.backgroundColor = '#00BFFF';
-              mutex =-1;
-            }
-            if(document.forms[0].elements[10].checked == true)
-            {
-              document.getElementById("six").style.backgroundColor = '#00BFFF';
-              mutex =-1;
-            }
-            if(document.forms[0].elements[12].checked == true)
-            {
-              document.getElementById("seven").style.backgroundColor = '#00BFFF';
-              mutex =-1;
-            }
+        if (document.forms[0].elements[0].checked == true) {
+          document.getElementById("one").style.backgroundColor = '#00BFFF';
+          mutex = -1;
+        }
+        if (document.forms[0].elements[2].checked == true) {
+          document.getElementById("two").style.backgroundColor = '#00BFFF';
+          mutex = -1;
+        }
+        if (document.forms[0].elements[4].checked == true) {
+          document.getElementById("three").style.backgroundColor = '#00BFFF';
+          mutex = -1;
+        }
+        if (document.forms[0].elements[6].checked == true) {
+          document.getElementById("four").style.backgroundColor = '#00BFFF';
+          mutex = -1;
+        }
+        if (document.forms[0].elements[8].checked == true) {
+          document.getElementById("five").style.backgroundColor = '#00BFFF';
+          mutex = -1;
+        }
+        if (document.forms[0].elements[10].checked == true) {
+          document.getElementById("six").style.backgroundColor = '#00BFFF';
+          mutex = -1;
+        }
+        if (document.forms[0].elements[12].checked == true) {
+          document.getElementById("seven").style.backgroundColor = '#00BFFF';
+          mutex = -1;
+        }
 
-            if(document.forms[0].elements[1].checked == true)
-            {
-              document.getElementById("one").style.backgroundColor = '#DC143C';
-              var change = document.getElementById("lock");
-              change.innerHTML ="Writing Lock: 1"
-              mutex =0;
-            }
-            if(document.forms[0].elements[3].checked == true)
-            {
-              document.getElementById("two").style.backgroundColor = '#DC143C';
-              var change = document.getElementById("lock");
-              change.innerHTML ="Writing Lock: 2"
-              mutex =1;
-            }
-            if(document.forms[0].elements[5].checked == true)
-            {
-              document.getElementById("three").style.backgroundColor = '#DC143C';
-              var change = document.getElementById("lock");
-              change.innerHTML ="Writing Lock: 3"
-              mutex =2;
-            }
-            if(document.forms[0].elements[7].checked == true)
-            {
-              document.getElementById("four").style.backgroundColor = '#DC143C';
-              var change = document.getElementById("lock");
-              change.innerHTML ="Writing Lock: 4"
-              mutex =3;
-            }
-            if(document.forms[0].elements[9].checked == true)
-            {
-              document.getElementById("five").style.backgroundColor = '#DC143C';
-              var change = document.getElementById("lock");
-              change.innerHTML ="Writing Lock: 5"
-              mutex =4;
-            }
-            if(document.forms[0].elements[11].checked == true)
-            {
-              document.getElementById("six").style.backgroundColor = '#DC143C';
-              var change = document.getElementById("lock");
-              change.innerHTML ="Writing Lock: 6"
-              mutex =5;
-            }
-            if(document.forms[0].elements[13].checked == true)
-            {
-              document.getElementById("seven").style.backgroundColor = '#DC143C';
-              var change = document.getElementById("lock");
-              change.innerHTML ="Writing Lock: 7"
-              mutex =6;
-            }
-            console.log(mutex);
-            if(mutex==-1)
-            {
-               document.getElementById("doc").disabled = true;
-            }
-            else
-            {
-                document.getElementById("doc").disabled = false;
-            }
+        if (document.forms[0].elements[1].checked == true) {
+          document.getElementById("one").style.backgroundColor = '#DC143C';
+          var change = document.getElementById("lock");
+          change.innerHTML = "Writing Lock: 1"
+          mutex = 0;
+        }
+        if (document.forms[0].elements[3].checked == true) {
+          document.getElementById("two").style.backgroundColor = '#DC143C';
+          var change = document.getElementById("lock");
+          change.innerHTML = "Writing Lock: 2"
+          mutex = 1;
+        }
+        if (document.forms[0].elements[5].checked == true) {
+          document.getElementById("three").style.backgroundColor = '#DC143C';
+          var change = document.getElementById("lock");
+          change.innerHTML = "Writing Lock: 3"
+          mutex = 2;
+        }
+        if (document.forms[0].elements[7].checked == true) {
+          document.getElementById("four").style.backgroundColor = '#DC143C';
+          var change = document.getElementById("lock");
+          change.innerHTML = "Writing Lock: 4"
+          mutex = 3;
+        }
+        if (document.forms[0].elements[9].checked == true) {
+          document.getElementById("five").style.backgroundColor = '#DC143C';
+          var change = document.getElementById("lock");
+          change.innerHTML = "Writing Lock: 5"
+          mutex = 4;
+        }
+        if (document.forms[0].elements[11].checked == true) {
+          document.getElementById("six").style.backgroundColor = '#DC143C';
+          var change = document.getElementById("lock");
+          change.innerHTML = "Writing Lock: 6"
+          mutex = 5;
+        }
+        if (document.forms[0].elements[13].checked == true) {
+          document.getElementById("seven").style.backgroundColor = '#DC143C';
+          var change = document.getElementById("lock");
+          change.innerHTML = "Writing Lock: 7"
+          mutex = 6;
+        }
+        console.log(mutex);
+        if (mutex == -1) {
+          document.getElementById("doc").disabled = true;
+        }
+        else {
+          document.getElementById("doc").disabled = false;
+        }
       }
     </script>
 
     <p style="position:absolute;top:60%;left:79%;font-size:22px"><b> Access Legend: </b></p>
-    <button type = "button", style="height:25px;width:25px;position:absolute;top:65%;left:80%;background-color:#FFFFFF"> </button>
+    <button type="button" , style="height:25px;width:25px;position:absolute;top:65%;left:80%;background-color:#FFFFFF">
+    </button>
     <p style="position:absolute;top:65%;left:82%;font-size:20px"> Not accessing </p>
-    <button type = "button", style="height:25px;width:25px;position:absolute;top:70%;left:80%;background-color:#00BFFF"> </button>
+    <button type="button" , style="height:25px;width:25px;position:absolute;top:70%;left:80%;background-color:#00BFFF">
+    </button>
     <p style="position:absolute;top:70%;left:82%;font-size:20px"> Reading </p>
-    <button type = "button", style="height:25px;width:25px;position:absolute;top:75%;left:80%;background-color:#DC143C"> </button>
+    <button type="button" , style="height:25px;width:25px;position:absolute;top:75%;left:80%;background-color:#DC143C">
+    </button>
     <p style="position:absolute;top:75%;left:82%;font-size:20px"> Writing </p>
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>
