@@ -79,29 +79,28 @@
             }
         }
         $(function () {
-            dict = {{ dictionary | safe }
-        };
-        filelis = dict.filelis;
-        path = dict.path;
-        curpath = path;
-        curlist = filelis;
-        for (var i = 0; i < path.length - 1; i++) {
-            $(".breadcrumb").append('<li><a onclick="cdfunc(this)" pathid="' + i + '">' + path[i] + '</a></li>');
-        }
-        if (path.length > 0) {
-            $(".breadcrumb").append('<li class="active">' + path[path.length - 1] + '</a></li>');
-        }
+            dict = {{ dictionary | safe }};
+            filelis = dict.filelis;
+            path = dict.path;
+            curpath = path;
+            curlist = filelis;
+            for (var i = 0; i < path.length - 1; i++) {
+                $(".breadcrumb").append('<li><a onclick="cdfunc(this)" pathid="' + i + '">' + path[i] + '</a></li>');
+            }
+            if (path.length > 0) {
+                $(".breadcrumb").append('<li class="active">' + path[path.length - 1] + '</a></li>');
+            }
 
-        if (filelis.length > 0) {
-            $("#mainform").append('<div class = "radio-button">' +
-                '<input type="radio" name="fname" value="' + filelis[0] + '" id = "' + filelis[0] + '" checked="checked"/>' +
-                '<label for="' + filelis[0] + '">' + filelis[0] + '</label></div>');
-        }
-        for (var i = 1; i < filelis.length; i++) {
-            $("#mainform").append('<div class = "radio-button">' +
-                '<input type="radio" name="fname" value="' + filelis[i] + '" id = "' + filelis[i] + '" />' +
-                '<label for="' + filelis[i] + '">' + filelis[i] + '</label></div>');
-        }
+            if (filelis.length > 0) {
+                $("#mainform").append('<div class = "radio-button">' +
+                    '<input type="radio" name="fname" value="' + filelis[0] + '" id = "' + filelis[0] + '" checked="checked"/>' +
+                    '<label for="' + filelis[0] + '">' + filelis[0] + '</label></div>');
+            }
+            for (var i = 1; i < filelis.length; i++) {
+                $("#mainform").append('<div class = "radio-button">' +
+                    '<input type="radio" name="fname" value="' + filelis[i] + '" id = "' + filelis[i] + '" />' +
+                    '<label for="' + filelis[i] + '">' + filelis[i] + '</label></div>');
+            }
         });
         function cdfunc(ele) {
             pathid = parseInt(ele.getAttribute('pathid'));
